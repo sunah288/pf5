@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대에스피엠</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/Business.css">
+    <link rel="stylesheet" href="css/Company.css">
+    <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/aside.css">
+   
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+     <!-- 자바스크립트 -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+   
+     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function(){
+            AOS.init();
+        });
+    </script>
+    <script> 
+    $(document).ready(function(){     
+        $('#Business .wrap ul').slick({
+            arrows: true,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            variableWidth: true,
+            appendDots: '.slick--visual__paging',
+                customPaging: function (slider, i) {
+                    return  '<span>'+(i + 1)+'</span><span>.</span><span>' + slider.slideCount + '</span>';
+                }
+        });
+        // 타이틀 
+        let $slider = $('#title .main ul');
+        let $progressBar = $('.progress-bar');
+    
+        // $slider.on('init reInit afterChange', function(event, slick, currentSlide){
+        //     let slideCount = slick.slideCount;
+        //     let currentIndex = (currentSlide ? currentSlide : 0) + 1;
+        //     let progress = (currentIndex / slideCount) * 100;
+        //     $progressBar.css('width', progress + '%');
+        // });
+        $slider.on('init reInit afterChange', function(event, slick, currentSlide){
+            // 진행바 애니메이션 초기화
+            $progressBar.removeClass('animate');
+            setTimeout(() => {
+            $progressBar.addClass('animate');
+            }, 10);
+        });
+        $slider.slick({
+            arrows: true,
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            appendDots: '.slick--visual__paging',
+                customPaging: function (slider, i) {
+                    return  '<span>'+(i + 1)+'</span><span>.</span><span>' + slider.slideCount + '</span>';
+                }
+        });
+       
+
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+           $('.subnav').hide();
+           $('#Business .wrap .hgroup').append('<span class="controll"></span>');
+           $('#Business .slick-prev, #Business .slick-next').appendTo('.controll');
+           $('#title .main').append('<span class="controll1"></span>');
+           $('#title .slick-prev, #title .slick-next').appendTo('.controll1');
+           $('#title .main .controll1').wrap('<div class="wprogress"></div>');
+            
+        //    $('#title .slick-dots').appendTo('.controll1');
+           
+           let num;
+           $("header nav .navall").hover(  //대메뉴서브 내리기
+                function(){
+			        $('.subnav').show();
+					num = $(this).children().children('li').index();
+					$('header nav .navall .subnav ul .list').hide();
+					$(`header nav .navall .subnav ul .list:eq(${num})`).hide().stop().slideDown();
+													
+			        $("header nav .navall>ul>li").hover(
+			                function(){
+			                    num = $(this).index();
+			                    console.log(num);
+			                    $('header nav .navall .subnav ul .list').hide();
+			                    $(`header nav .navall .subnav ul .list:eq(${num})`).hide().stop().slideDown();
+                                $('header nav .navall .subnav ul .list .sub li a.block').slideDown(200);
+			                },
+			                function(){
+			                    $(`header nav .navall .subnav ul .list`).not($(`header nav .navall .subnav ul .list:eq(${num})`)).hide();
+                                $('header nav .navall .subnav ul .list .sub li a.block').fadeIn();
+			                }
+			        );
+				},
+				function(){
+					//$('header nav .navall .subnav ul .list').hide();
+			        $('.subnav').hide();
+					}
+				);
+                // 언어----
+                // $().click();
+        });
+    </script>
+    <!-- 마우스힐 -->
+    <script>
+        $(function(){
+            $('section').unwrap();
+        });
+    </script>
+   <script type="text/javascript">
+    window.onload = function () {
+        var elm = ".box";
+        $(elm).each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } 
+                else if (event.detail)
+                    delta = -event.detail / 3;
+                var moveTop = $(window).scrollTop();
+                var elmSelecter = $(elm).eq(index);
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).next().offset().top;
+                        }catch(e){}
+                    }
+                // 마우스휠을 아래에서 위로
+                } else {
+                    if ($(elmSelecter).prev() != undefined) {
+                        try{
+                            moveTop = $(elmSelecter).prev().offset().top;
+                        }catch(e){}
+                    }
+                }
+                
+                // 화면 이동 0.8초(800)
+                $("html,body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                    }
+                });
+            });
+        });
+    }
+    </script>
+    <script>
+      $(function(){
+        // dots 동적생성.표시
+        $('footer').before('<aside><h2 class="hide">페이지내용바로가기</h2></aside>');
+        $('aside').append('<ul></ul>');
+        for(let n=0; n<$('section').length+1; n++){
+            $('aside ul').append('<li><a href="#'+n+'">'+n+'</a></li>');           
+        }
+        // scroll 위치에 따라 dots 표기
+        $('aside li:eq(0) a').addClass('current2');
+        let scrollTop =$(window).scrollTop();
+        let sec0=$('section:eq(0)').offset().top-500;
+        let sec1=$('section:eq(1)').offset().top;
+        let sec2=$('section:eq(2)').offset().top;
+        console.log(sec1);
+        $(window).scroll(function(){
+            let scrollTop =$(window).scrollTop();
+            if(scrollTop<sec0){
+                $('aside li:eq(0) a').addClass('current2');
+                $('aside li:eq(0) a').parent().siblings().children('a').removeClass();
+            } if(scrollTop>=sec0){
+                $('aside li:eq(1) a').addClass('current');
+                $('aside li:eq(1) a').parent().siblings().children('a').removeClass();
+            } if(scrollTop>=sec1){
+                $('aside li:eq(2) a').addClass('current');
+                $('aside li:eq(2) a').parent().siblings().children('a').removeClass();
+            } if(scrollTop>=sec2){
+                $('aside li:eq(3) a').addClass('current2');
+                $('aside li:eq(3) a').parent().siblings().children('a').removeClass();
+            }
+        });
+      });  
+    </script>
+    <!-- 햄버거 메뉴 -->
+      <script>
+        $(document).ready(function(){
+            $('header nav .btn .btn1').click(function(){
+
+            });
+        });
+      </script>
+      <!-- kor 아이콘 -->
+      <script>
+        $(document).ready(function(){
+            $('header nav .btn a.en').hide();
+          // 1. a.kr 클릭하면 submenu 보이기
+          $('header nav .btn a.kr').click(function(event){
+            event.preventDefault();
+            $('header nav .btn a.en').show();
+            $('header nav .btn .submenu').addClass('rrr');
+          });
+      
+          // 2. 마우스를 submenu에서 빼면 숨기기
+          $('header nav .btn .submenu').mouseleave(function(){
+            $(this).removeClass('rrr');
+            $('header nav .btn a.en').hide();
+          });
+        });
+      </script>
+      
+</head>
+
+<body>
+    <header data-aos="fade-down" data-aos-duration="700">
+        <nav class="flex-align">
+            <h1 class="h3">현대에스피엠</h1>
+            <div class="navall flex-align">
+                <ul class="gnb flex-center" >
+                    <li><a href="" class = "block">Product</a></li>
+                    <li><a href="" class = "block">Business</a></li>
+                    <li><a href="" class = "block">Support</a></li>
+                    <li><a href="" class = "block">About us</a></li>
+                </ul>                
+                <div class="subnav flex-center">
+                    <ul>
+                        <li class="list sub1">
+                            <ul class="sub">
+                                <li><a href="" class = "block">제조공정</a></li>
+                                <li><a href="" class = "block">공정</a></li>
+                                <li><a href="" class = "block">유통폼목</a></li>
+                            </ul>
+                        </li>
+                        <li class="list sub2">
+                             <ul class="sub">
+                                <li><a href="" class = "block">사업분야</a></li>
+                                <li><a href="" class = "block">해외파트너</a></li>
+                                <li><a href="" class = "block">주요고객</a></li>
+                            </ul>
+                        </li>
+                        <li class="list sub3" >
+                            <ul class="sub">
+                                <li><a href="" class = "block">카달로그</a></li>
+                                <li><a href="" class = "block">납품실적</a></li>
+                                <li><a href="" class = "block">인증서</a></li>
+                            </ul>
+                        </li>
+                        <li class="list sub4">
+                            <ul class="sub">
+                                <li><a href="" class = "block">CEO인사말</a></li>
+                                <li><a href="" class = "block">비전</a></li>
+                                <li><a href="" class = "block">연혁</a></li>
+                                <li><a href="" class = "block">오시는길</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn">
+                <div class="submenu">
+                    <a href="" class = "block kr">KOR</a>
+                    <a href="" class = "block en">eng</a>
+                </div>
+                <a href="" class="btn1">
+                    <span class="span1"></span><span class="span2"></span><span class="span3"></span>
+                </a>
+                
+            </div>
+        </nav>
+    </header> 
+    <!-- 타이틀영역 -->
+     <div id="title" class="box">
+        <div class="main wrap flex-column-center">
+            <h2 class="h1" data-aos="fade-right" data-aos-duration="1000" ><span>Hyundai</span>Special Piping Materials</h2>
+            <ul >
+                <li>
+                    <h3 class="h2" >Global</h3>
+                    <p>세계적인 기업으로 성장하겠습니다.</p>
+                </li>
+                <li >
+                    <h3 class="h2" >Sustainability</h3>
+                    <p>지속 가능한 경영을 하겠습니다.</p>
+                </li>
+                <li >
+                    <h3 class="h2">Environment</h3>
+                    <p>환경을 생각하는 기업이 되겠습니다</p>
+                </li>
+                <li >
+                    <h3 class="h2">Reliability</h3>
+                    <p>신뢰를 바탕으로 고객을 맞이하겠습니다.</p>
+                </li>
+            </ul>
+            <div class="progress-barG" data-aos="fade-up">
+                <div class="progress-bar"></div>
+                <div class="slick--visual__paging"></div>
+            </div>
+            <div class="scroll" data-aos="fade-right" data-aos-duration="1000" >
+                <p>SCROLL DOWN</p>
+                <div class="arrow-icon">
+                    <i>▼</i>
+                    <i>▼</i>
+                    <i>▼</i>
+                </div>
+              </div>  
+        </div>
+    </div>
+    <!-- 메인영역 -->
+     <main>
+        <section id="product" class="box">
+            <div class="wrap">  
+                <div class="grid" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Global leaders piping material</h3>
+                    <h2 class="h1">Products</h2>
+                    <p>현대에스피엠은 엔지니어링 서비스, 최고 공급 및 유통의<br>
+                        포괄적인 패키지 고품질의 산업 제품 및 장비를제공합니다
+                    </p>
+                    <a href="" class = "block rbutton " data-aos="fade-left" data-aos-duration="1000" >Viewmore</a>
+                </div>
+                <ul class="flex-center" data-aos="fade-up" data-aos-duration="1000">
+                    <li>
+                        <a href="" class = "block">
+                            <h4 class="h3">Flanges</h4>
+                            <p>다양한 규격의 산업용 및<br>
+                                상하수도용 플랜지</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class = "block">
+                            <h4 class="h3">Fittings</h4>
+                            <p>Tee, Reducer, Elbow, Cap, Lateral 등<br>
+                                모든 이형관
+                                </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class = "block">
+                            <h4 class="h3">Piping Materials</h4>
+                            <p>주철관, PE관, 코팅강관, 심레스 등<br>
+                                유통가능 모든 품목 취급</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="Business" class="box">
+            <div class="wrap flex-align" data-aos="fade-left" data-aos-duration="1000">
+                <div class="hgroup flex-column" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="h1">Business</h2>
+                    <h3>Global leaders piping material</h3>
+                    <p>현대에스피엠은 고객 서비스에 매우 중점을 두고 있으며,<br>
+                    특히 고객의 요구에 맞춘 산업 제휴를 맺고 있습니다.</p>
+                    <a href="" class="block rbutton">Viewmore</a>
+                </div>
+                <ul>
+                    <li class="ani ani1">
+                        <h4 class="h4">Petrochemical </h4>
+                        <p>석유화학</p>
+                    </li>
+                    <li class="ani ani2">
+                        <h4 class="h4">Water Supply</h4>
+                        <p>상하수도</p>
+                    </li>
+                    <li class="ani ani3">
+                        <h4 class="h4">Power Plant</h4>
+                        <p>발전소</p>
+                    </li>
+                    <li class="ani ani4">
+                        <h4 class="h4">Oil&Gas</h4>
+                        <p>오일&가스</p>
+                    </li>
+                    <li class="ani ani5">
+                        <h4 class="h4">Shipbuilding</h4>
+                        <p>선박업</p>
+                    </li>
+                    <li class="ani ani6">
+                        <h4 class="h4">Infrastructure</h4>
+                        <p>사회 기반 시설</p>
+                    </li>
+                </ul>
+               
+            </div>
+            
+        </section>
+        <section id="Company" class="box">
+            <div class="all">
+               <div class="wrap">
+                <div class="hgroup flex-column"  data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="h1">Company Info</h2>
+                    <h3>Global leaders piping material</h3>
+                    <a href="" class="block rbutton">Viewmore</a>
+                </div>
+                </div>
+                    <div class=" agroup flex">
+                    <a href="" class="block"><p class="h5">카달로그</p></a>
+                    <a href="" class="block"><p class="h5">납품실적</p></a>
+                </div>  
+            </div>
+        </section>
+     </main>
+     <!-- 푸터영역 -->
+    <footer class="box">
+        <div class="footer-content">
+            <h1 class="h3">현대에스피엠</h1>
+            <ul>
+                <li>
+                    <h2  class="h6">영업사무소</h2>
+                    <address><strong>ADDRESS</strong>경기 광명시 새빛공원로 67 광명역자이타워 A동 1911호</address>
+                    <p><strong>TEL</strong> 02-6925-6489</p>
+                    <p><strong>FAX</strong> 02-6925-6490</p>
+                    <a href="" class="link"><strong>Email</strong> Sales@hyundaispm.co.kr</a>
+                </li>
+                <li>
+                    <h2  class="h6">공장</h2>
+                    <address><strong>ADDRESS</strong>부산 광역시 강서구 녹산산업북로 188, C동 (송정로)</address>
+                </li>
+                <li>
+                    <h2  class="h6">중동 사무실</h2>
+                    <address><strong>ADDRESS</strong> OFFICE 3115, BUSINESS BAY, CHURCHILL TOWER</address>
+                    <P><strong>TEL</strong>+971 4 244 4655</P>
+                </li>
+            </ul>
+            <a href="" class="top block"></a>
+        </div> 
+        <div class="privacy">
+            <p>Copyright ©hyundaispm Ind. All rights reserved.</p>
+            <p class="privacyP">개인정보처리방침</p>
+        </div>
+    </footer>
+    <svg width="0" height="0">
+        <defs>
+          <clipPath id="mask" clipPathUnits="userSpaceOnUse">
+            <path class="st0" d="M50.5,0.5c-27.5,0-50,22.5-50,50v200.1c0,27.5,22.5,50,50,50l0,0c27.5,0,50,22.5,50,50v199.9
+            c0,27.5,22.5,50,50,50h1600c27.5,0,50-22.5,50-50v-500c0-27.5-22.5-50-50-50H50.5z"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <svg width="0" height="0">
+        <defs>
+            <clipPath id="mask2" clipPathUnits="userSpaceOnUse">
+                <path class="st0" d="M1730.9,0c38,0,69.1,31.1,69.1,69.1v511.7c0,38-31.1,69.1-69.1,69.1H969.1c-38,0-69.1,31.1-69.1,69.1v11.7
+                c0,38-31.1,69.1-69.1,69.1H69.1C31.1,800,0,768.9,0,730.9V69.1C0,31.1,31.1,0,69.1,0H1730.9z M1800,750v-10c0-27.6-22.4-50-50-50
+                h-300c-27.6,0-50,22.4-50,50v10c0,27.6,22.4,50,50,50h300C1777.6,800,1800,777.6,1800,750z M1344.8,750v-10c0-27.6-22.4-50-50-50
+                h-300c-27.6,0-50,22.4-50,50v10c0,27.6,22.4,50,50,50h300C1322.4,800,1344.8,777.6,1344.8,750z"/>
+          </clipPath>
+        </defs>
+      </svg>
+</body>
+</html>

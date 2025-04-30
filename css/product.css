@@ -1,0 +1,113 @@
+
+#product {
+    background-color: #f4f4f4;
+}
+
+#product .wrap {
+    height: 100%;
+}
+
+#product .wrap .grid {
+    display: grid;
+    grid-template-columns: auto 1fr 12%;
+    grid-template-rows: auto auto;
+    column-gap: 40px;
+    padding-top: 120px;
+    box-sizing: border-box;
+}
+
+#product .wrap .grid h2 {
+   
+    grid-column: 1;
+    grid-row: 1;
+    transform: translateY(18px);
+    font-weight: bold;
+}
+
+#product .wrap .grid h3 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#product .wrap .grid p {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: flex-end;
+    line-height: 1.5;
+}
+
+#product .wrap .grid p span {
+}
+
+#product .wrap .grid a {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: flex-end;
+    justify-self: end;
+}
+
+#product .wrap ul {
+    margin-top: 70px;
+    height: 420px;
+    gap: 45px;
+}
+
+#product .wrap ul li {
+    width: 33%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+#product .wrap ul li:hover{
+    
+    background-color: #d80000;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+#product .wrap ul li:hover a{
+    
+    color: white;
+}
+#product .wrap ul li a {
+    text-align: center;
+    padding: 80px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#product .wrap ul li a::after{
+    content: "";
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: translateY(100%);
+    width: 50%;
+    height: 50%;
+    filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.3));
+}
+#product .wrap ul li:nth-child(1) a::after{
+    background-image: url(../img/main_prd_img01.png);
+}
+#product .wrap ul li:nth-child(2) a::after{
+    background-image: url(../img/main_prd_img02.png);
+    width: 74%;
+    height: 54%;
+}
+#product .wrap ul li:nth-child(3) a::after{
+    background-image: url(../img/main_prd_img03.png);
+    width: 44%;
+    height: 47%;
+}
+#product .wrap ul li a h4 {
+    font-weight: bolder;
+    width: 100%;
+}
+
+#product .wrap ul li a p {
+}

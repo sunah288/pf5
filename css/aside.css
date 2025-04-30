@@ -1,0 +1,33 @@
+aside{
+
+    position: fixed;
+    left: 5%;
+    top: 35%;
+}
+aside ul{
+}
+aside li{
+   margin-bottom: 40px;
+}
+aside li a{
+    font-size: 0;
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    transition: 0.4s;
+}
+.current{
+    background-color: #202020;
+    /*! transform: scale(2); */
+    width: 10px;
+    height: 10px;
+}
+.current2{
+    background-color: #fff;
+    transform: scale(2);
+}
+.current3{
+    background-clip: #eee;
+}

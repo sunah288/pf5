@@ -1,0 +1,164 @@
+#title {
+}
+
+#title .main {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  gap: 25px;
+  max-width: 100%;
+  transform: translateY(50px);
+}
+
+#title .main h2 {
+  width: 100%;
+  font-weight: bold;
+  max-width: 1350px;
+}
+#title .main h2 span{
+  color: #1375B3;
+  margin-right: 20px;
+}
+#title .main > ul {
+  width: 100%;
+  height: 600px;
+  width: 1800px;
+  clip-path: url(#mask);
+  -webkit-clip-path: url(#mask);
+  transition: 1s;
+  position: relative;
+  overflow: hidden;
+}
+
+#title .main ul li {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: white;
+}
+#title .main ul li span{
+  
+}
+#title .main ul li:nth-child(1){
+  background-image: url(../img/main_visual_01.jpg);
+}
+#title .main ul li:nth-child(2){
+  background-image: url(../img/main_visual_02.jpg);
+}
+#title .main ul li:nth-child(3){
+  background-image: url(../img/main_visual_03.jpg);
+}
+#title .main ul li:nth-child(4){
+  background-image: url(../img/main_visual_04.jpg);
+}
+#title .main ul li h3 {
+  max-width: 1350px;
+  margin: 60px auto 10px auto;
+  font-weight: bold;
+}
+
+#title .main ul li p {
+  margin: 0 auto;
+  max-width: 1350px;
+}
+#title .progress-barG {
+  
+  width: 1230px;
+  height: 3px;
+  position: absolute;
+  bottom: 23%;
+  right: 13%;
+}
+#title .main .controll1{
+  
+  display: flex;
+  max-width: fit-content;
+  position: absolute;
+  left: 14%;
+  bottom: 20%;
+  gap: 50px;
+}
+#title .main span button{
+  
+}
+#title .main span .slick-next,#title .main span .slick-prev{
+  
+  position: static;
+}
+#title .main .scroll {
+  writing-mode: vertical-rl;
+  position: absolute;
+  left: 5%;
+  bottom: 17%;
+  display: flex;
+  align-items: center;
+}
+#title .main .scroll p{
+  
+}
+#title .main .arrow-icon {
+  
+  display: flex;
+}
+#title .main i{
+  animation-delay: 0.2s;
+  animation: arrowBounce 1s infinite cubic-bezier(.47,0,.74,.71);
+  font-size: 0;
+  
+}
+#title .main i:nth-child(1) {
+  
+}
+#title .main i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#title .main i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+#title .main i::after{
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/svg/triangle.svg);
+}
+@keyframes arrowBounce {
+  0%{
+    opacity: 0;
+ 
+  }
+  50% {
+    opacity: 0.5;
+   
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#title .wprogress{
+  
+}
+#title .wprogress .controll1{
+  
+}
+/* 슬릭 진행바 */
+.slider-container {
+  position: relative;
+}
+.progress-bar {
+  /*! position: absolute; */
+  bottom: 150px;
+  height: 5px;
+  background-color: #ff5733;
+  transition: width 0.3s linear;
+  left: 0;
+}
+@keyframes countingBar{0%{width:0}100%{width:100%}}
+  

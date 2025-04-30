@@ -1,0 +1,112 @@
+#Company {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+#Company .all{
+  
+  background-image: url(../img/main_company_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 1800px;
+  height: 800px;
+  margin: 0 auto;
+  clip-path: url(#mask2);
+  position: relative;
+}
+#Company .wrap {
+  height: 100%;
+  /*! position: relative; */
+}
+
+#Company .wrap .hgroup {
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+}
+
+#Company .wrap .hgroup h2.h1 {
+  order: 2;
+  transform: translateY(-30px);
+}
+
+#Company .wrap .hgroup h3 {
+  order: 1;
+}
+
+#Company .wrap .hgroup a.block.rbutton {
+  order: 3;
+  transform: translateY(20px);
+  color: white;
+  border: 2px solid white;
+}
+#Company .wrap .hgroup a.block.rbutton::after{
+  
+  background-image: url(../img/svg/mathw.svg);
+}
+#Company .wrap .hgroup a.block.rbutton:hover{
+  
+  background-color: white;
+  color: black;
+}
+#Company .wrap .hgroup a.block.rbutton:hover::after{
+  
+  background-image: url(../img/svg/math.svg);
+}
+#Company .agroup {
+   position: absolute;
+  bottom: 21px;
+  left: 63%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: fit-content;
+   /* 필요 시 조절 */
+  z-index: 2;;
+}
+
+#Company .agroup a.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  color: white;
+  box-sizing: border-box;
+}
+
+#Company .agroup a.block p{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+#Company .agroup a.block p::after{
+   content: "";
+   width: 30px;
+   height: 30px;
+   display: block;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+#Company .agroup a.block:nth-child(1) p{
+  
+}
+#Company .agroup a.block:nth-child(2){
+  
+  transform: translateX(165%);
+}
+#Company .agroup a.block:nth-child(1) p::after{
+ 
+  background-image: url(../img/svg/book.svg);
+  transform: translateX(230px);
+}
+#Company .agroup a.block:nth-child(2) p::after{
+  background-image: url(../img/svg/list.svg);
+  width: 40px;
+  height: 40px;
+  transform: translateX(210px);
+}

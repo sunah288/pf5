@@ -1,0 +1,97 @@
+/* 레이아웃 */
+body{
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+#title{
+    height: 100vh;
+}
+section {
+    height: 100vh;
+}
+main{
+    height: 100%;
+    flex: 1;
+}
+.wrap{
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+}
+.flex{
+    display: flex;
+}
+.flex-align{
+    display: flex;
+    align-items: center;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-column-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+}
+.block{
+    display: block;
+}
+/* 폰트 */
+.h1{
+    font-size: 85px;
+}
+.h2{
+    font-size: 40px;
+       
+}
+.h3{
+   font-size: 33px; 
+}
+.h4{
+    font-size: 28px;
+}
+.h5{
+    font-size: 22px;
+}
+.h6{
+    font-size: 16px;
+}
+/* 클래스 스타일 */
+a.rbutton{
+  border:2px solid black;
+  border-radius:30px;
+  padding:10px;
+  box-sizing: border-box;
+  width: 180px;
+  display: flex;
+  align-items: end;
+  gap:20px;
+  justify-content: space-around; 
+  transition: 0.5s;
+}
+ a.rbutton::after{
+    content: "";
+    width: 15px;
+    height: 17px;
+    background-image: url(../img/svg/math.svg);  
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+a.rbutton:hover{
+   background-color: black;
+   color: white;
+}
+a.rbutton:hover::after{
+    background-image: url(../img/svg/mathw.svg);
+}
+.hide{
+    font-size: 0;
+}

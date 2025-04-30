@@ -1,0 +1,177 @@
+#Business {
+  background-color: #fbf7f7;
+  overflow: hidden;
+}
+
+#Business .wrap {
+  height: 100%;
+  max-width: 100%;
+  padding-left: calc((100% - 1350px) / 2);
+  box-sizing: border-box;
+  gap: 70px;
+  
+  overflow: hidden;
+}
+
+#Business .wrap .hgroup {
+  gap: 10px;
+}
+
+#Business .wrap .hgroup h2.h1 {
+  order: 2;
+  font-weight: bold;
+}
+
+#Business .wrap .hgroup h3 {
+  order: 1;
+}
+
+#Business .wrap .hgroup p {
+  order: 3;
+  letter-spacing: -2.5px;
+}
+
+#Business .wrap .hgroup a.block.rbutton {
+  order: 4;
+  margin: 40px 0;
+}
+#Business .wrap .hgroup a.block.rbutton::hover{
+  
+}
+
+#Business .wrap ul {
+  height: 500px;
+  overflow: hidden;
+  transform: translateX(calc(100% / 6));
+  position: relative;
+  color: white;
+}
+
+#Business .wrap ul li {
+  height: 500px;
+  width: 350px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  transition: 0.5s; 
+  border-radius: 35px;
+  text-align: center;
+  margin-left: 40px;
+  position: relative;
+}
+#Business .wrap ul li.ani{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#Business .wrap ul li.ani1{
+  background-image: url(../img/main_business_item01.jpg);
+}
+#Business .wrap ul li.ani2{
+   background-image: url(../img/main_business_item02.jpg);
+}
+#Business .wrap ul li.ani3{
+   background-image: url(../img/main_business_item03.jpg);
+}
+#Business .wrap ul li.ani4{
+   background-image: url(../img/main_business_item04.jpg);
+}
+#Business .wrap ul li.ani5{
+   background-image: url(../img/main_business_item05.jpg);
+}
+#Business .wrap ul li.ani6{
+   background-image: url(../img/main_business_item06.jpg);
+}
+#Business .wrap ul li.slick-current{
+  border-radius: 180px;
+  overflow: hidden;
+  
+}
+#Business .wrap ul li::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ 
+}
+#Business .wrap ul li.slick-current::before{
+  background-color: rgba(216, 0, 0, 0.7);
+}
+#Business .wrap ul li.slick-active+li{
+  
+}
+#Business .wrap ul li.slick-active+li+li{
+  opacity: 0.5;
+  
+}
+
+#Business .wrap ul li h4 {
+  
+  height: 500px;
+  /*! width: 350px !important; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#Business .wrap ul li p {
+  margin-bottom: 30px;
+}
+#Business .wrap ul li.slick-current h4,#Business .wrap ul li.slick-current p{
+  
+  transform: translateY(-300px);
+  color: white;
+  font-weight: bold;
+  transition: 0.5s
+}
+/* 슬릭 */
+.slick-slider{
+  
+}
+.slick-slider .slick-track, .slick-slider .slick-list{
+  
+  height: 100%;
+}
+.slick-slide{
+  
+}
+.controll{
+  
+  order: 5;
+  display: flex;
+  gap: 30px;
+  transform: translateY(40px);
+}
+.controll .slick-prev{
+  
+}
+.controll .slick-next{
+  
+}
+.controll .slick-prev, .controll .slick-next{
+  
+  position: static;
+}
+/* 슬릭 진행 */
+.slick--visual__paging {
+  position: absolute;
+  top: 10vh;
+  left: 8%;
+  letter-spacing: 2px;
+  font-size: 170%;
+  z-index: 2;
+}
+.slick--visual__paging .slick-dots li {
+  display: none;
+  justify-content: space-between;
+  color: #555;
+}
+.slick--visual__paging .slick-dots li.slick-active {
+  display: flex;
+}
+.slick--visual__paging .slick-dots li.slick-active span:first-of-type {
+  color: #FC919B;
+}

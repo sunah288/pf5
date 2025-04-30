@@ -1,0 +1,178 @@
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+}
+
+header nav.flex-align {
+  height: 120px;
+  justify-content: space-between;
+  width: 1740px;
+  margin: 0 auto;
+}
+
+header nav h1.h3 {
+  color: #727171;
+  font-size: 0;
+  background-image: url(../img/logo.png);
+  width: 200px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+header nav .navall {
+  height: 100%;
+  flex-direction: column;
+}
+
+header nav .navall.flex-align {
+  position: relative;
+}
+
+header nav .navall .gnb {
+  height: 100%;
+}
+
+header nav .navall .gnb li {
+  height: 100%;
+  padding: 30px;
+}
+
+header nav .navall .gnb li a.block {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header nav .navall .subnav {
+  position: absolute;
+  top: 100%;
+}
+
+
+header nav .navall .subnav > ul {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 120px;
+}
+
+header nav .navall .subnav ul .list{
+  background-color: red;
+  border-radius: 20px;
+  width: 120px;
+}
+header nav .navall .subnav ul .list.sub1{
+  grid-column: 1;
+}
+header nav .navall .subnav ul .list.sub2{
+  grid-column: 2;
+}
+header nav .navall .subnav ul .list.sub3{
+  grid-column: 3;
+}
+header nav .navall .subnav ul .list.sub4{
+  grid-column: 4;
+}
+header nav .navall .subnav ul .list .sub{
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+header nav .navall .subnav ul .list .sub li {
+  padding: 4px;
+}
+
+header nav .navall .subnav ul .list .sub li a.block {
+  color: white;
+  font-size: 13px;
+}
+header nav .navall .subnav ul .list .sub li a.block:hover{
+  
+  font-weight: bold;
+}
+header nav .btn {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+header nav .btn .submenu{
+  
+}
+.rrr{
+  
+  width: 100%;
+  background-color: red;
+  border-radius: 20px;
+}
+.rrr a{
+  
+  background-color: red !important;
+  color: white !important;
+}
+.rrr a::before{
+  background-image: url(../img/svg/globalw.svg) !important;
+}
+header nav .btn a.kr {
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 20px;
+  width: 45px;
+  height: 10px;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+header nav .btn a.en {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+header nav .btn a.block::before{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 15px;
+  background-image: url(../img/svg/global.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(-3px);
+}
+
+header nav .btn .btn1 {
+  font-size: 0;
+  background-color: transparent;
+  border: transparent;
+  display: flex;
+  gap: 10px;
+}
+header nav .btn .btn1 span{
+  
+  display: block;
+}
+header nav .btn .btn1 .span1{
+  
+  width: 4px;
+  height: 30px;
+  background-color: black;
+}
+header nav .btn .btn1 .span2{
+  
+  width: 4px;
+  height: 20px;
+  background-color: black;
+  transform: translateY(5px);
+}
+header nav .btn .btn1 .span3{
+  
+  width: 4px;
+  height: 30px;
+  background-color: black;
+}
